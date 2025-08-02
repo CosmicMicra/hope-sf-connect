@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* HopeSF Design System - Charity Water + BetterHelp inspired
+Primary yellow (#FFD23F), clean whites, warm grays
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 24% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 24% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 24% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* HopeSF Primary Yellow */
+    --primary: 48 100% 62%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 24% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 48 100% 62%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 48 100% 62%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Custom HopeSF tokens */
+    --hope-yellow: 48 100% 62%;
+    --hope-yellow-light: 48 100% 87%;
+    --hope-dark: 210 24% 16%;
+    --hope-gray: 220 8.9% 46.1%;
+    --hope-gray-light: 220 14.3% 95.9%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--hope-dark) / 0.8), hsl(var(--hope-dark) / 0.4));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--hope-gray-light)));
+    
+    /* Shadows */
+    --shadow-card: 0 10px 30px -10px hsl(var(--hope-dark) / 0.1);
+    --shadow-button: 0 4px 14px 0 hsl(var(--hope-yellow) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +77,45 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 24% 16%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 24% 16%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 24% 16%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 48 100% 62%;
+    --primary-foreground: 210 24% 16%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 8.9% 20%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 8.9% 20%;
+    --muted-foreground: 220 8.9% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 48 100% 62%;
+    --accent-foreground: 210 24% 16%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 8.9% 25%;
+    --input: 220 8.9% 25%;
+    --ring: 48 100% 62%;
+    
+    --hope-yellow: 48 100% 62%;
+    --hope-yellow-light: 48 100% 70%;
+    --hope-dark: 210 24% 16%;
+    --hope-gray: 220 8.9% 60%;
+    --hope-gray-light: 220 8.9% 20%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background) / 0.9), hsl(var(--background) / 0.6));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--hope-gray-light)));
+    
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-button: 0 4px 14px 0 hsl(var(--hope-yellow) / 0.4);
   }
 }
 
@@ -100,6 +125,28 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .hope-button {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-button)] active:scale-95;
+  }
+  
+  .hope-card {
+    @apply bg-card border border-border rounded-2xl p-8 shadow-[var(--shadow-card)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .hope-gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .hope-chat-bubble {
+    @apply bg-primary text-primary-foreground px-6 py-4 rounded-3xl shadow-lg animate-pulse;
   }
 }
