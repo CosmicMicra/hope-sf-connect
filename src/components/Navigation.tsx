@@ -76,7 +76,24 @@ const Navigation = () => {
             </a>
 
             {/* Action Buttons */}
-            <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium">
+            <Link to="/login">
+              <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium">
+                Login
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
+                Get Help
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
               Login
             </Button>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
