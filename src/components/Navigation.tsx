@@ -43,29 +43,9 @@ const Navigation = () => {
                 Find Help
               </a>
               
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                  For Organizations
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-48 bg-background border border-border shadow-lg">
-                  <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
-                    Food Bank Login
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
-                    Shelter Login
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
-                    Register Food Bank
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
-                    Register Shelter
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
-                    Become a Partner
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                For Organizations
+              </a>
 
               <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
                 About Us
@@ -75,9 +55,26 @@ const Navigation = () => {
                 Resources
               </a>
 
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6">
-                LOGIN
-              </Button>
+              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                Food Banks
+              </a>
+
+              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                Shelters
+              </a>
+
+              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                Contact
+              </a>
+
+              <div className="flex items-center space-x-3 ml-8">
+                <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium px-6">
+                  Login
+                </Button>
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6">
+                  Get Help Now
+                </Button>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -104,26 +101,9 @@ const Navigation = () => {
                   Find Help
                 </a>
                 
-                <div className="space-y-3">
-                  <span className="block text-foreground font-medium text-lg">For Organizations</span>
-                  <div className="pl-4 space-y-3">
-                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200">
-                      Food Bank Login
-                    </a>
-                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200">
-                      Shelter Login
-                    </a>
-                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200">
-                      Register Food Bank
-                    </a>
-                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200">
-                      Register Shelter
-                    </a>
-                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200">
-                      Become a Partner
-                    </a>
-                  </div>
-                </div>
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+                  For Organizations
+                </a>
 
                 <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
                   About Us
@@ -133,9 +113,26 @@ const Navigation = () => {
                   Resources
                 </a>
 
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
-                  LOGIN
-                </Button>
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+                  Food Banks
+                </a>
+
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+                  Shelters
+                </a>
+
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+                  Contact
+                </a>
+
+                <div className="space-y-3">
+                  <Button variant="outline" className="w-full border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium">
+                    Login
+                  </Button>
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
+                    Get Help Now
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
