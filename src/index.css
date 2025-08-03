@@ -145,8 +145,4 @@ All colors MUST be HSL.
   .hope-gradient-text {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
-  
-  .hope-chat-bubble {
-    @apply bg-primary text-primary-foreground px-6 py-4 rounded-3xl shadow-lg animate-pulse;
-  }
 }
