@@ -28,53 +28,70 @@ const Navigation = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-[9999] bg-white transition-all duration-300 ${
-        isScrolled ? 'shadow-md h-16' : 'shadow-sm h-18'
+        isScrolled ? 'shadow-md border-b border-border' : 'border-b border-border/50'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-full">
-            {/* Logo */}
+          <div className="flex justify-between items-center h-16">
+            {/* Logo Placeholder */}
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-primary">🏠 HopeSF</span>
+              <div className="text-2xl font-bold text-primary flex items-center gap-2">
+                🏠 <span>HopeSF</span>
+              </div>
             </div>
 
-            {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                Find Help
-              </a>
-              
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                For Organizations
-              </a>
+            {/* Desktop Menu - Centered Navigation */}
+            <div className="hidden lg:flex items-center justify-center flex-1 px-8">
+              <div className="flex items-center space-x-8">
+                <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  Find Help
+                </a>
+                
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                    For Organizations
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-48 bg-background border border-border shadow-lg">
+                    <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
+                      Food Bank Login
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
+                      Shelter Login
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
+                      Register Food Bank
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
+                      Register Shelter
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-primary/10 hover:text-primary cursor-pointer">
+                      Become a Partner
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
 
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                About Us
-              </a>
-              
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                Resources
-              </a>
+                <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  About Us
+                </a>
+                
+                <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  Resources
+                </a>
 
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                Food Banks
-              </a>
-
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                Shelters
-              </a>
-
-              <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
-                Contact
-              </a>
-
-              <div className="flex items-center space-x-3 ml-8">
-                <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium px-6">
-                  Login
-                </Button>
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6">
-                  Get Help Now
-                </Button>
+                <a href="#" className="text-foreground hover:text-primary transition-colors duration-200 font-medium">
+                  Emergency
+                </a>
               </div>
+            </div>
+
+            {/* Desktop Buttons - Right Side */}
+            <div className="hidden lg:flex items-center space-x-3">
+              <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium px-6">
+                Login
+              </Button>
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6">
+                Get Help
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -92,45 +109,54 @@ const Navigation = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 z-[9998] lg:hidden">
           <div className="fixed inset-0 bg-black bg-opacity-25" onClick={toggleMobileMenu}></div>
-          <div className="fixed top-0 right-0 w-80 h-full bg-background shadow-xl transform transition-transform duration-300">
-            <div className="p-6 pt-20">
-              <div className="space-y-6">
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+          <div className="fixed top-16 left-0 right-0 bg-background shadow-xl border-t border-border">
+            <div className="p-6">
+              <div className="space-y-4">
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg py-2">
                   Find Help
                 </a>
                 
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
-                  For Organizations
-                </a>
+                <div className="space-y-2">
+                  <span className="block text-foreground font-medium text-lg py-2">For Organizations</span>
+                  <div className="pl-4 space-y-2">
+                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200 py-1">
+                      Food Bank Login
+                    </a>
+                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200 py-1">
+                      Shelter Login
+                    </a>
+                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200 py-1">
+                      Register Food Bank
+                    </a>
+                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200 py-1">
+                      Register Shelter
+                    </a>
+                    <a href="#" className="block text-muted-foreground hover:text-primary transition-colors duration-200 py-1">
+                      Become a Partner
+                    </a>
+                  </div>
+                </div>
 
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg py-2">
                   About Us
                 </a>
                 
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg py-2">
                   Resources
                 </a>
 
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
-                  Food Banks
+                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg py-2">
+                  Emergency
                 </a>
 
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
-                  Shelters
-                </a>
-
-                <a href="#" className="block text-foreground hover:text-primary transition-colors duration-200 font-medium text-lg">
-                  Contact
-                </a>
-
-                <div className="space-y-3">
+                <div className="pt-4 space-y-3">
                   <Button variant="outline" className="w-full border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium">
                     Login
                   </Button>
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
-                    Get Help Now
+                    Get Help
                   </Button>
                 </div>
               </div>
