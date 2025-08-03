@@ -27,7 +27,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-[9999] bg-white transition-all duration-300 ${
         isScrolled ? 'shadow-md h-16' : 'shadow-sm h-18'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
