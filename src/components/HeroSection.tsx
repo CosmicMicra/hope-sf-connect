@@ -98,53 +98,6 @@ const HeroSection = () => {
             </div>
           )}
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default HeroSection;
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                  🤖
-                </div>
-                <div className="text-left text-foreground">
-                  <div className="font-semibold">HopeSF Assistant</div>
-                  <div className="text-sm text-muted-foreground">Here to help you find resources</div>
-                </div>
-              </div>
-              
-              {/* Sample Questions */}
-              <div className="grid gap-3 mb-6">
-                {sampleQuestions.map((question, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setChatMessage(question)}
-                    className="text-left p-4 rounded-xl border border-border hover:bg-muted transition-colors duration-200 text-foreground"
-                  >
-                    {question}
-                  </button>
-                ))}
-              </div>
-              
-              {/* Chat Input */}
-              <div className="flex gap-3">
-                <Input
-                  value={chatMessage}
-                  onChange={(e) => setChatMessage(e.target.value)}
-                  placeholder="Type your message here..."
-                  className="flex-1 text-foreground"
-                />
-                <Button className="hope-button px-6">
-                  <Send className="w-5 h-5" />
-                </Button>
-              </div>
-              
-              <p className="text-sm text-muted-foreground mt-4">
-                Available 24/7 in English, Spanish, Chinese, and more
-              </p>
-            </div>
-          )}
-        </div>
 
         {/* Floating Chat Indicator */}
         <div className="absolute bottom-10 right-10 animate-float">
