@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HopeSF Design System - Charity Water + BetterHelp inspired
+Primary yellow (#FFD23F), clean whites, warm grays
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 24% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 16%;
+
+    /* HopeSF Primary Yellow */
+    --primary: 48 100% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 210 24% 16%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 48 100% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 48 100% 62%;
+
+    --radius: 0.75rem;
+    
+    /* Custom HopeSF tokens */
+    --hope-yellow: 48 100% 62%;
+    --hope-yellow-light: 48 100% 87%;
+    --hope-dark: 210 24% 16%;
+    --hope-gray: 220 8.9% 46.1%;
+    --hope-gray-light: 220 14.3% 95.9%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--hope-dark) / 0.8), hsl(var(--hope-dark) / 0.4));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--hope-gray-light)));
+    
+    /* Shadows */
+    --shadow-card: 0 10px 30px -10px hsl(var(--hope-dark) / 0.1);
+    --shadow-button: 0 4px 14px 0 hsl(var(--hope-yellow) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 24% 16%;
+    --foreground: 0 0% 100%;
+
+    --card: 210 24% 16%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 210 24% 16%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 48 100% 62%;
+    --primary-foreground: 210 24% 16%;
+
+    --secondary: 220 8.9% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 8.9% 20%;
+    --muted-foreground: 220 8.9% 60%;
+
+    --accent: 48 100% 62%;
+    --accent-foreground: 210 24% 16%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 8.9% 25%;
+    --input: 220 8.9% 25%;
+    --ring: 48 100% 62%;
+    
+    --hope-yellow: 48 100% 62%;
+    --hope-yellow-light: 48 100% 70%;
+    --hope-dark: 210 24% 16%;
+    --hope-gray: 220 8.9% 60%;
+    --hope-gray-light: 220 8.9% 20%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background) / 0.9), hsl(var(--background) / 0.6));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--hope-gray-light)));
+    
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-button: 0 4px 14px 0 hsl(var(--hope-yellow) / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .hope-button {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-button)] active:scale-95;
+  }
+  
+  .hope-card {
+    @apply bg-card border border-border rounded-2xl p-8 shadow-[var(--shadow-card)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .hope-gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .hope-chat-bubble {
+    @apply bg-primary text-primary-foreground px-6 py-4 rounded-3xl shadow-lg animate-pulse;
+  }
+}
